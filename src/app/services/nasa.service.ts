@@ -25,6 +25,7 @@ export class NasaService {
     return this.httpClient.get<NasaApiResponse>(`${this.baseUrl}/rovers/${filter.rover}/photos`, {
       params: {
         ...params,
+        page: 1,
         api_key:this.apiKey
       }
 
