@@ -9,7 +9,7 @@ import { ApiError, NasaApiResponse } from '../models/nasa-response.model';
 })
 export class NasaService {
 
-  private apiKey = '<your-api-key>';
+  private apiKey = 'DEMO_KEY';
   private baseUrl = 'https://api.nasa.gov/mars-photos/api/v1';
 
   constructor(
