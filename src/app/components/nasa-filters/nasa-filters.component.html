@@ -1,0 +1,28 @@
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Rover</mat-label>
+    <mat-select formControlName="rover">
+      <mat-option *ngFor="let roverOption of (roverOptions  | async)" [value]="roverOption">
+        {{ roverOption | capitalize }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Camera</mat-label>
+    <mat-select formControlName="camera">
+      <mat-option value="ALL">
+        ALL
+      </mat-option>
+      <mat-option *ngFor="let cameraOption of (cameraOptions  | async)" [value]="cameraOption">
+        {{ cameraOption | capitalize }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" formControlName="earth_date" placeholder="Pick day">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</form>
